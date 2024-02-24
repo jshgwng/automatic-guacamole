@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uganda Information</title>
+</head>
+<body>
+    <h1>Uganda Information</h1>
+
+    <div id="districts">
+        <h2>Districts</h2>
+        <ul id="districts-list"></ul>
+    </div>
+
+    <script>
+        // Fetch districts data from backend
+        fetch('/index.php')
+            .then(response => response.json())
+            .then(data => {
+                const districtsList = document.getElementById('districts-list');
+                data.forEach(district => {
+                    const li = document.createElement('li');
+                    li.textContent = district;
+                    districtsList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error fetching districts:', error));
+    </script>
+</body>
+</html>

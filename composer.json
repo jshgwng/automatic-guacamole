@@ -1,0 +1,16 @@
+{
+    "name": "smart.tech/php",
+    "autoload": {
+        "psr-4": {
+            "SmartTech\\Php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joshua"
+        }
+    ],
+    "require": {
+        "kusaasira/uganda-geo": "^1.0"
+    }
+}
